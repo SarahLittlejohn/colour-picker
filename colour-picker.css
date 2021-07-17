@@ -1,0 +1,67 @@
+h1{
+        color: rgb(243, 236, 221);
+        background-color: #62D4CD;
+        text-align: center;
+        font-weight: normal;
+        text-transform: uppercase;
+        padding: 20px 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+        background: rgb(243, 236, 221);
+        margin: 0;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#targetColour{
+    font-size: 200%;
+}
+
+button{
+        border: none;
+        background-color: rgb(243, 236, 221);
+        text-transform: uppercase;
+        height: 100%;
+        font-weight: 700;
+        color: #73E29B;
+        letter-spacing: 1px;
+        font-size: inherit;
+        transition: all 0.3s;
+        
+}
+
+button:hover{
+        color: rgb(243, 236, 221);
+        background-color: #73E29B;
+}
+
+.square{
+        background-color: red;
+        width: 12%;
+        margin: 1.66%;
+        float: left;
+        padding-bottom: 12%;
+        transition: background 0.7s;
+}
+
+.container{
+        margin: 20px auto;
+        max-width: 1200px;
+}
+
+#stripe{
+        text-align: center;
+        background-color: rgb(243, 236, 221);
+        padding: auto 0;
+}
+
+#message{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        height: 100%;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: inherit;
+        transition: all 0.3s;
+}
