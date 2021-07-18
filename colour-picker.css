@@ -28,6 +28,7 @@ button{
         letter-spacing: 1px;
         font-size: inherit;
         transition: all 0.3s;
+        margin: 3px auto;
         
 }
 
@@ -63,6 +64,5 @@ button:hover{
         font-weight: 700;
         letter-spacing: 1px;
         font-size: inherit;
-        /* transition: all 0.3s; */
         font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
