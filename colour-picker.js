@@ -41,12 +41,12 @@ function init(){
         squares[i].addEventListener("click", function(){
             if(picked === this.style.backgroundColor) {
                 message.textContent = "Correct";
-                message.style.color = "green";
+                message.style.color = "steelblue";
                 changeColor(this.style.backgroundColor);
                 reset.textContent = "Play Again?";
             } else {
                 message.textContent="Try Again";
-                message.style.color="red";
+                message.style.color="hotpink";
                 this.style.backgroundColor ="rgb(243, 236, 221)";
             }
 
@@ -85,7 +85,7 @@ function init(){
         picked=arr[randomPickedColourIndex()];
         targetColour.textContent = picked;
         message.textContent="";
-        head.style.backgroundColor= "steelblue";
+        head.style.backgroundColor= "#73E29B";
         for(var i=0;i<squares.length;i++){
             squares[i].style.backgroundColor=arr[i];
         }
