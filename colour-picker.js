@@ -1,7 +1,4 @@
-var noOfSquares = Math.floor(Math.random() * 9 + 1);
-for (var i = 0; i < noOfSquares; i++) {
-    document.write('<div class="square"></div>');
-}
+var container = document.getElementById("container");
 
 //pallet
 var arr = [];
@@ -24,7 +21,8 @@ var message = document.getElementById("message");
 //heading
 var head = document.querySelector("h1");
 
-//reset button
+//reset buttons
+var buttons = document.getElementsByName("button");
 var reset = document.getElementById("Random");
 var easy = document.getElementById("Easy");
 var medium = document.getElementById("Medium");
@@ -34,29 +32,7 @@ var hard = document.getElementById("Hard");
 init();
 
 function init() {
-    setGame();
-
-    //to get all the squares div
-    var squares = document.getElementsByClassName("square");
-
-    for (var i = 0; i < squares.length; i++) {
-        //setting each square's colour
-        squares[i].style.backgroundColor = arr[i];
-
-        //adding event listener
-        squares[i].addEventListener("click", function () {
-            if (picked === this.style.backgroundColor) {
-                message.textContent = "Correct";
-                message.style.color = "steelblue";
-                changeColour(this.style.backgroundColor);
-            } else {
-                message.textContent = "Try Again";
-                message.style.color = "hotpink";
-                this.style.backgroundColor = backgroundColour;
-            }
-
-        })
-    }
+    setGame(Math.floor(Math.random() * 9 + 1));
 
     //Button listen for reset of game
     reset.addEventListener("click", resetIn);
@@ -64,18 +40,45 @@ function init() {
     medium.addEventListener("click", resetMedium);
     hard.addEventListener("click", resetHard);
 
-    //Changes squares and heading to correct colour
-    function changeColour(colour) {
+    //Resets the game to random
+    function resetIn() {
+        container.innerHTML = "";
+        message.textContent = "";
+        var noOfSquares = Math.floor(Math.random() * 9 + 1);
+        setGame(noOfSquares);
+
         for (var i = 0; i < squares.length; i++) {
-            squares[i].style.backgroundColor = colour;
+            squares[i].style.backgroundColor = arr[i];
         }
-        head.style.backgroundColor = colour;
     }
 
-    //Resets the game
-    function resetIn() {
-        setGame();
+    //Resets the game to easy
+    function resetEasy() {
+        container.innerHTML = "";
         message.textContent = "";
+        setGame(3);
+
+        for (var i = 0; i < squares.length; i++) {
+            squares[i].style.backgroundColor = arr[i];
+        }
+    }
+
+    //Resets the game to easy
+    function resetMedium() {
+        container.innerHTML = "";
+        message.textContent = "";
+        setGame(7);
+
+        for (var i = 0; i < squares.length; i++) {
+            squares[i].style.backgroundColor = arr[i];
+        }
+    }
+
+    //Resets the game to easy
+    function resetHard() {
+        container.innerHTML = "";
+        message.textContent = "";
+        setGame(12);
 
         for (var i = 0; i < squares.length; i++) {
             squares[i].style.backgroundColor = arr[i];
@@ -84,7 +87,12 @@ function init() {
 }
 
 //Function to set game
-function setGame() {
+function setGame(noOfSquares) {
+
+    for (var i = 0; i < noOfSquares; i++) {
+        container.innerHTML += '<div class="square"></div>';
+    }
+
     //generate random coloured palette
     arr = generateRandomColour(noOfSquares);
 
@@ -115,5 +123,35 @@ function setGame() {
         var g = Math.floor(Math.random() * 256);
         var b = Math.floor(Math.random() * 256);
         return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+
+    //to get all the squares div
+    var squares = document.getElementsByClassName("square");
+
+    for (var i = 0; i < squares.length; i++) {
+        //setting each square's colour
+        squares[i].style.backgroundColor = arr[i];
+
+        //adding event listener
+        squares[i].addEventListener("click", function () {
+            if (picked === this.style.backgroundColor) {
+                message.textContent = "Correct";
+                message.style.color = "steelblue";
+                changeColour(this.style.backgroundColor);
+            } else {
+                message.textContent = "Try Again";
+                message.style.color = "hotpink";
+                this.style.backgroundColor = backgroundColour;
+            }
+
+        })
+
+        //Changes squares and heading to correct colour
+        function changeColour(colour) {
+            for (var i = 0; i < squares.length; i++) {
+                squares[i].style.backgroundColor = colour;
+            }
+            head.style.backgroundColor = colour;
+        }
     }
 }

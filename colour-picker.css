@@ -58,9 +58,15 @@ button:hover{
         padding: auto 0;
 }
 
+#stripe2{
+        text-align: center;
+        background-color: rgb(243, 236, 221);
+        padding: auto 0;
+        height: 7px;
+}
+
 #message{
         text-transform: uppercase;
-        height: 100%;
         font-weight: 700;
         letter-spacing: 1px;
         font-size: inherit;
