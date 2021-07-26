@@ -1,10 +1,11 @@
 h1{
         color: rgb(243, 236, 221);
         background-color: #73E29B;
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
         text-align: center;
         font-weight: normal;
         padding: 20px 0;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -33,23 +34,18 @@ button{
 }
 
 button:hover{
-        color: rgb(243, 236, 221);
-        background-color: #73E29B;
+        background-color: white;
 }
 
 .square{
         background-color: red;
-        width: 12%;
-        margin: 2.3%;
         float: left;
-        padding-bottom: 12%;
         transition: background 0.7s;
 }
 
 .container{
-        margin: 20px auto;
+        margin: 20px;
         max-width: 1200px;
-        align-self: center;
 }
 
 #stripe{
@@ -70,5 +66,5 @@ button:hover{
         font-weight: 700;
         letter-spacing: 1px;
         font-size: inherit;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

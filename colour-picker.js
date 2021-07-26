@@ -22,7 +22,7 @@ var message = document.getElementById("message");
 var head = document.querySelector("h1");
 
 //reset buttons
-var buttons = document.getElementsByName("button");
+var button = document.querySelectorAll("button");
 var reset = document.getElementById("Random");
 var easy = document.getElementById("Easy");
 var medium = document.getElementById("Medium");
@@ -32,7 +32,7 @@ var hard = document.getElementById("Hard");
 init();
 
 function init() {
-    setGame(Math.floor(Math.random() * 9 + 1));
+    setGame(Math.floor(Math.random() * 7 + 3));
 
     //Button listen for reset of game
     reset.addEventListener("click", resetIn);
@@ -44,7 +44,7 @@ function init() {
     function resetIn() {
         container.innerHTML = "";
         message.textContent = "";
-        var noOfSquares = Math.floor(Math.random() * 9 + 1);
+        var noOfSquares = Math.floor(Math.random() * 7 + 3);
         setGame(noOfSquares);
 
         for (var i = 0; i < squares.length; i++) {
@@ -131,6 +131,9 @@ function setGame(noOfSquares) {
     for (var i = 0; i < squares.length; i++) {
         //setting each square's colour
         squares[i].style.backgroundColor = arr[i];
+        var dimensions = findDimension(noOfSquares) + "px";
+        squares[i].style.width = dimensions;
+        squares[i].style.height = dimensions;
 
         //adding event listener
         squares[i].addEventListener("click", function () {
@@ -146,12 +149,27 @@ function setGame(noOfSquares) {
 
         })
 
+    }
+
         //Changes squares and heading to correct colour
         function changeColour(colour) {
             for (var i = 0; i < squares.length; i++) {
                 squares[i].style.backgroundColor = colour;
             }
+            head.style.background = 'none';
             head.style.backgroundColor = colour;
+            reset.style.color = colour;
+            easy.style.color = colour;
+            medium.style.color = colour;
+            hard.style.color = colour;
         }
-    }
+
+        //Dimension of squares
+        function findDimension(number) {
+            if(number == 12) {
+                return window.innerWidth*2/12 ;
+            } else {
+                return window.innerWidth/number;
+            }
+        }
 }
