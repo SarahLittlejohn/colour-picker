@@ -1,9 +1,9 @@
 h1{
         color: rgb(243, 236, 221);
-        background-color: #62D4CD;
+        background-color: #73E29B;
+        background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
         text-align: center;
         font-weight: normal;
-        text-transform: uppercase;
         padding: 20px 0;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -16,6 +16,7 @@ body{
 
 #targetColour{
     font-size: 200%;
+    text-transform: uppercase;
 }
 
 button{
@@ -28,25 +29,22 @@ button{
         letter-spacing: 1px;
         font-size: inherit;
         transition: all 0.3s;
+        margin: 3px auto;
         
 }
 
 button:hover{
-        color: rgb(243, 236, 221);
-        background-color: #73E29B;
+        background-color: white;
 }
 
 .square{
         background-color: red;
-        width: 12%;
-        margin: 1.66%;
         float: left;
-        padding-bottom: 12%;
         transition: background 0.7s;
 }
 
 .container{
-        margin: 20px auto;
+        margin: 20px;
         max-width: 1200px;
 }
 
@@ -56,12 +54,17 @@ button:hover{
         padding: auto 0;
 }
 
+#stripe2{
+        text-align: center;
+        background-color: rgb(243, 236, 221);
+        padding: auto 0;
+        height: 7px;
+}
+
 #message{
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         text-transform: uppercase;
-        height: 100%;
         font-weight: 700;
         letter-spacing: 1px;
         font-size: inherit;
-        transition: all 0.3s;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
